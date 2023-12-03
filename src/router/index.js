@@ -11,6 +11,7 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: Login,
+        meta: { guest: true }
     },
     {
         path: '/',
@@ -32,8 +33,12 @@ router.beforeEach((to, from, next) => {
         }
         next()
     } else {
+        if (store.getters.isLoggedIn) {
+            next('/')
+        }
         next()
     }
 })
+
 
 export default router

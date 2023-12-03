@@ -104,8 +104,8 @@ const store = new Vuex.Store({
     },
     getters: {
         isLoggedIn(state) {
-            state.isLoggedIn = !state.isLoggedIn;
-            return state.userType !== ''
+            state.isLoggedIn = state.userType !== '';
+            return state.isLoggedIn
         },
         isAdmin(state) {
             return state.userType === 'admin'

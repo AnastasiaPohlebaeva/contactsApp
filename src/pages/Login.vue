@@ -19,7 +19,8 @@
                 </label>
             </div>
             <button class="btn"
-                    type="submit">
+                    type="submit"
+                    :disabled="userType === ''">
                 Submit
             </button>
         </form>
